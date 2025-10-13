@@ -1,0 +1,11 @@
+---
+title: "Hugo Åkerstrand, PhD"
+pagetitle: "Hugo Åkerstrand, PhD"
+subtitle: "Researcher | R Programmer"
+image: assets/website/img/profile.jpg
+image-alt: "Photo by Svetlana Åkerstrand."
+
+about: 
+  template: solana
+  image-width: 28em
+---
