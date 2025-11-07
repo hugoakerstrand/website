@@ -4,8 +4,35 @@ project:
 website:
   title: "Hugo Åkerstrand"
   site-url: https://hugoakerstrand.com
+  description: "Life science researcher and R programmer."
+  back-to-top-navigation: true
   
   navbar:
-    tools:
-    - icon: github
-      href: https://github.com/hugoakerstrand/website
+    right:
+    - text: About
+      href: about/index.qmd
+    - text: Blog
+      href: blog/index.qmd
+    - text: TidyTuesday
+      href: tidytuesday/index.qmd
+    - text: R Packages
+      href: r_packages/index.qmd
+  
+  page-footer: 
+    left: >- 
+      &#169; 2025 Hugo Åkerstrand | 
+      Made with [Quarto](https://quarto.org) | 
+      <a href=https://github.com/hugoakerstrand/website/> {{< fa brands github >}}</a>
+    center: |
+      <a href=https://www.linkedin.com/in/hugo-%C3%A5kerstrand-74696655/> {{< fa brands linkedin >}}</a>
+      <a href=https://github.com/hugoakerstrand/> {{< fa brands github >}}</a>
+      <a href=https://pubmed.ncbi.nlm.nih.gov/?term=%C3%85kerstrand+H&cauthor_id=35088351> {{< ai pubmed >}}</a>
+      <a href=https://orcid.org/0000-0003-2457-0764> {{< ai orcid >}}</a>
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - assets/theme.scss
+    fontawesome: true
+    

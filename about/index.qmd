@@ -1,0 +1,36 @@
+---
+title: Hugo Åkerstrand
+subtitle: R Programmer, Life Science Researcher
+image: ../assets/website/img/profile.jpg
+image-alt: Photo by Svetlana Åkerstrand.
+about:
+  template: trestles
+  image-width: 14em
+  image-shape: rounded
+  id: hero-heading
+  links:
+    - text: "{{< fa brands linkedin >}}"
+      aria-label: "LinkedIn"
+      href: "https://www.linkedin.com/in/hugo-%C3%A5kerstrand-74696655"
+    - text: "{{< fa brands github >}}"
+      aria-label: "GitHub"
+      href: "https://github.com/hugoakerstrand/"
+    - text: "{{< fa solid envelope >}}"
+      aria-label: "Email"
+      href: "mailto:hugo.akerstrand@gmail.com"
+---
+
+::: {#hero-heading}
+# Welcome!
+
+I am Hugo, a life science researcher and R programmer. I hold a PhD
+in developmental immunology from Lund Stem Cell Center, Sweden. I combine a strong
+understanding of **wet lab** science with a passion for **R programming**. 
+
+I use my *bilingual* skill set to develop tools, explore data, and generate visualization
+that lie close to the needs and expectations of life science researchers. 
+
+Learn more about my approach to R progamming over on my [blog](../blog), 
+explore my data visualization under [TidyTuesday contributions](../tidytuesday),
+or read up on my [R package for flow cytometry analysis](/r_packages).
+:::

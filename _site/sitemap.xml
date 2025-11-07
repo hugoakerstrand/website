@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hugoakerstrand.com/index.html</loc>
-    <lastmod>2025-10-13T10:42:04.373Z</lastmod>
+    <lastmod>2025-10-19T12:42:41.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hugoakerstrand.com/blog/index.html</loc>
+    <lastmod>2025-10-18T10:32:31.736Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hugoakerstrand.com/tidytuesday/index.html</loc>
+    <lastmod>2025-10-18T11:39:39.471Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hugoakerstrand.com/about/index.html</loc>
+    <lastmod>2025-10-18T12:14:04.552Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hugoakerstrand.com/blog/2025-10-25-into_background_motivation/index.html</loc>
+    <lastmod>2025-10-18T10:31:22.015Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hugoakerstrand.com/r_packages/index.html</loc>
+    <lastmod>2025-10-17T16:41:49.634Z</lastmod>
   </url>
 </urlset>
