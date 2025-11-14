@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+
+// Colors
+$theme-primary-light: #fdf6e3 ;
+$theme-font-dark: #ccc;
+$theme-link-dark:  #75AADB;
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+$font-family-sans-serif: "Noto Sans", sans-serif;@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Body
+$body-bg: darken($theme-primary-light, 2%);
+
+// Navbar
+$navbar-bg: darken($theme-primary-light, 1%);
+
+/*-- scss::rules --*/

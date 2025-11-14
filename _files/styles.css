@@ -1,0 +1,63 @@
+/* Navbar */
+.navbar {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+/* Footer */
+.nav-footer-center .fa-brands,
+.nav-footer-center .fa-solid,
+.nav-footer-center .ai {
+  font-size: 1.25em;
+}
+
+.footer {
+  font-size: 1.33rem;
+  line-height: 1;
+}
+
+/* Title */
+.title {
+  font-size: 3em;
+  font-style: bold;
+  font-weight: 500;
+  line-height: 1.1em;
+  text-align: left;
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: "Petrona";
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+}
+
+/* Hero heading */
+#hero-heading {
+  text-align: justify;
+}
+
+/* About entity */
+.quarto-about-solana {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* About image */
+.about-image.round {
+  width: 19em !important;
+  height: 19em !important;
+  margin-right: 3.5em;
+  margin-top: -1em;
+}
+
+/* About content */
+.about-contents {
+  max-width: 40rem !important;
+}
