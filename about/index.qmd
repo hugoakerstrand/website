@@ -1,7 +1,7 @@
 ---
 title: Hugo Åkerstrand
 subtitle: R Programmer, Life Science Researcher
-image: ../assets/website/img/profile.jpg
+image: ../_files/website/img/profile.jpg
 image-alt: Photo by Svetlana Åkerstrand.
 about:
   template: trestles

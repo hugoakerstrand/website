@@ -1,7 +1,7 @@
 ---
 title: TidyTuesday
 listing:
-  contents: tidytuesday.yml
+  contents: dataviz.yml
   type: grid
 ---
 

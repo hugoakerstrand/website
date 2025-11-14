@@ -6,15 +6,15 @@ website:
   site-url: https://hugoakerstrand.com
   description: "Life science researcher and R programmer."
   back-to-top-navigation: true
-  
+  search: false
   navbar:
     right:
     - text: About
       href: about/index.qmd
     - text: Blog
       href: blog/index.qmd
-    - text: TidyTuesday
-      href: tidytuesday/index.qmd
+    - text: dataviz
+      href: dataviz/index.qmd
     - text: R Packages
       href: r_packages/index.qmd
   
@@ -28,11 +28,22 @@ website:
       <a href=https://github.com/hugoakerstrand/> {{< fa brands github >}}</a>
       <a href=https://pubmed.ncbi.nlm.nih.gov/?term=%C3%85kerstrand+H&cauthor_id=35088351> {{< ai pubmed >}}</a>
       <a href=https://orcid.org/0000-0003-2457-0764> {{< ai orcid >}}</a>
+      <a href=mailto:hugo.akerstrand@gmail.com/>  {{< fa solid envelope >}}</a>
 
 format:
   html:
+    css: _files/styles.css
     theme: 
-      - cosmo
-      - assets/theme.scss
+      light: 
+        - cosmo
+        - _files/theme_light.scss
+        - _files/fonts.scss 
+      dark: 
+        - cosmo
+        - _files/theme_dark.scss
+        - _files/fonts.scss 
+    respect-user-color-scheme: true
     fontawesome: true
+    embed-resources: true
+    link-external-newwindow: true
     

@@ -2,5 +2,5 @@
   path: https://github.com/hugoakerstrand/tidytuesday/tree/main/2025/2025-10-14
   image: https://raw.githubusercontent.com/hugoakerstrand/tidytuesday/main/2025/2025-10-14/ggplot_4_0_layout.png
   description: Testing new formal in ggplot2 4.0 
-  categories: [TidyTuesday, Data visualization]
+  categories: [TidyTuesday]
   date: 2025-10-14
