@@ -7,4 +7,4 @@ listing:
 
 [TidyTuesday](https://github.com/rfordatascience/tidytuesday) is a weekly, social
 data science project. I use it a chance to explore new and fun ways of doing 
-data visualization using [ggplot2](https://github.com/tidyverse/ggplot2).
+data visualization, primarily using [ggplot2](https://github.com/tidyverse/ggplot2).

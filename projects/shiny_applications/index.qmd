@@ -1,6 +1,6 @@
 ---
-title: Blog 
-listing: default
+title: "Applications"
+format: html
 ---
 
 *Under construction, check back soon!*

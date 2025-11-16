@@ -1,32 +1,41 @@
 ---
 title: "Hugo Åkerstrand, PhD"
-pagetitle: "Hugo Åkerstrand, PhD"
-subtitle: "R Programming | Life Science Research"
+subtitle: |
+    R Programming | Life Science Research | Data Visualization 
+    <!-- <a href=https://www.linkedin.com/in/hugo-%C3%A5kerstrand-74696655/> {{< fa brands linkedin >}}</a> -->
+    <!-- <a href=https://github.com/hugoakerstrand/> {{< fa brands github >}}</a> -->
+    <!-- <a href=https://pubmed.ncbi.nlm.nih.gov/?term=%C3%85kerstrand+H&cauthor_id=35088351> {{< ai pubmed >}}</a> -->
+    <!-- <a href=https://orcid.org/0000-0003-2457-0764> {{< ai orcid >}}</a> -->
+    <!-- <a href=mailto:hugo.akerstrand@gmail.com/>  {{< fa solid envelope >}}</a> -->
 image: _files/website/img/profile.jpg
-image-alt: "Head shot of a smiling man on a spring day, standing in an alley of trees."
-
-twitter-card:
-  title: Hugo Åkerstrand, PhD
-  description: |
-    Life science researcher and R programmer.
-  image: assets/website/img/profile.jpg
-
-
+image-alt: Headshot of Hugo Åkerstrand. Photo by Svetlana Åkerstrand.
 about: 
   template: solana
   image-width: 20em
   image-shape: round
   id: hero-heading
   # links:
-     # - text: "{{< fa brands linkedin >}}"
-       # aria-label: "LinkedIn"
-       # href: "https://www.linkedin.com/in/hugo-%C3%A5kerstrand-74696655"
-      # - text: "{{< fa brands github >}}"
-      #   aria-label: "GitHub"
-      #   href: "https://github.com/hugoakerstrand/"
-      # - text: "{{< fa solid envelope >}}"
-      #   aria-label: "Email"
-      #   href: "mailto:hugo.akerstrand@gmail.com"
+  #   - text: "{{< fa brands linkedin >}}"
+  #     aria-label: "LinkedIn"
+  #     href: "https://www.linkedin.com/in/hugo-%C3%A5kerstrand-74696655"
+  #   - text: "{{< fa brands github >}}"
+  #     aria-label: "GitHub"
+  #     href: "https://github.com/hugoakerstrand/"
+  #   - text: "{{< fa solid envelope >}}"
+  #     aria-label: "Email"
+  #     href: "mailto:hugo.akerstrand@gmail.com"
+  #   - text: "{{< ai orcid >}}"
+  #     href: "https://orcid.org/0000-0003-2457-0764"
+  #     aria-label: "ORCID"
+  #   - text: "{{< ai pubmed >}}"
+  #     href: "https://pubmed.ncbi.nlm.nih.gov/?term=%C3%85kerstrand+H&cauthor_id=35088351"
+  #     aria-label: "Pubmed"
+
+twitter-card:
+  title: Hugo Åkerstrand, PhD
+  description: |
+    Life science research, R programming, & data visualization.
+  image: assets/website/img/profile.jpg
 
 page-layout: full
 
@@ -37,14 +46,18 @@ execute:
 ---
 
 ::: {#hero-heading}
-Welcome! I am Hugo, a life science researcher with a PhD in developmental immunology 
-from [Lund Stem Cell Center, Sweden](https://www.stemcellcenter.lu.se/). I also have 
-industry experience from pharmaceutical research, having worked as a research scientist 
-at [Novo Nordisk, Denmark](https://www.novonordisk.com/).
+# Welcome!
 
-I combine a strong foundation in wet-lab biology with a passion for R programming to 
-**visualize**, **analyze**, and **explore** data, to ensure **reproducibility**, and 
-to **automate** complex analysis workflows.
+I am Hugo, a life science researcher and R programmer. I hold a PhD
+in developmental immunology from Lund Stem Cell Center, Sweden. I combine a strong
+understanding of **wet lab** science with a passion for **R programming**. 
+
+I use my *bilingual* skill set to **develop tools**, **explore, visualize** and
+**analyze data**, that lie close to the needs and expectations of life science 
+researchers. 
+
+On my free time, I follow Swedish politics and as a hobby I try to summarize relevant
+topics using a single graph of key data.
 :::
 
 <!-- hero-heading -->

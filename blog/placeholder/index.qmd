@@ -1,0 +1,12 @@
+---
+title: "placeholder"
+description: "placeholder"
+author: "Hugo Åkerstrand"
+date: "2025-11-16"
+categories:
+  - placeholder
+  - placeholder2
+  - placeholder3
+---
+
+*place holder*

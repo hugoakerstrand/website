@@ -16,15 +16,15 @@ website:
     - text: dataviz
       menu: 
         - text: "Tidy Tuesday"
-          href: dataviz/tidy_tuesday/tidy_tuesday.qmd
+          href: dataviz/tidy_tuesday/index.qmd
         - text: "Swedish Politics"
-          href: dataviz/swedish_politics/swedish_politics.qmd
+          href: dataviz/swedish_politics/index.qmd
     - text: Projects
       menu: 
         - text: "R packages" 
-          href: projects/r_packages.qmd
+          href: projects/r_packages/index.qmd
         - text: "Applications"
-          href: projects/applications.qmd
+          href: projects/shiny_applications/index.qmd
   
   page-footer: 
     left: >- 

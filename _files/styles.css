@@ -23,7 +23,7 @@
 }
 
 /* Title */
-.title {
+.title, .h1 {
   font-size: 3em;
   font-style: bold;
   font-weight: 500;
@@ -32,7 +32,7 @@
 }
 
 /* Subtitle */
-.subtitle {
+.quarto-title p {
   font-family: "Petrona";
   font-size: 1.2rem;
   font-weight: 700;
@@ -57,13 +57,22 @@
 
 /* About image */
 .about-image.round {
-  width: 19em !important;
-  height: 19em !important;
-  margin-right: 3.5em;
-  margin-top: -1em;
+  width: 16em !important;
+  height: 16em !important;
+  margin-right: 1em;
+  margin-top: -1.85em;
 }
 
 /* About content */
 .about-contents {
-  max-width: 40rem !important;
+  max-width: 75rem !important;
+}
+
+/* About links */
+.about-links .fa-brands,
+.about-links .fa-solid,
+.about-links .ai {
+  font-size: 1.25em;
+  margin-left: 0.1em;
+  vertical-align: middle;
 }
