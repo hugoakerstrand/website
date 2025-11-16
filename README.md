@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Personal website for<br>Hugo Åkerstrand <a href='https://hugoakerstrand.com'><img src='https://raw.githubusercontent.com/hugoakerstrand/website/main/_files/website/img/website_dump.png' align="right" height="180" alt=''/></a>
+# Personal website for<br>[Hugo Åkerstrand](https://hugoakerstrand.com) <img src='https://raw.githubusercontent.com/hugoakerstrand/website/main/_files/website/img/website_dump.png' align="right" height="180" alt=''/></a>
 
 My website was made using [Quarto](https://quarto.org/), an open-source
 technical and scientific publishing system. I have previously used
