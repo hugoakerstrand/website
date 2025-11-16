@@ -40,7 +40,7 @@ twitter-card:
 page-layout: full
 
 execute: 
-  freeze: false
+  freeze: auto
   echo: false
   warning: false
 ---
