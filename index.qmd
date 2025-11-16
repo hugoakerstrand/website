@@ -43,8 +43,8 @@ industry experience from pharmaceutical research, having worked as a research sc
 at [Novo Nordisk, Denmark](https://www.novonordisk.com/).
 
 I combine a strong foundation in wet-lab biology with a passion for R programming to 
-**visualize** and **explore** data, ensure **reproducibility**, and **automate** complex 
-analysis workflows.
+**visualize**, **analyze**, and **explore** data, to ensure **reproducibility**, and 
+to **automate** complex analysis workflows.
 :::
 
 <!-- hero-heading -->

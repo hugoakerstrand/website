@@ -20,3 +20,11 @@ $link-color: $theme-link-dark;
 $navbar-bg: $theme-primary-dark;
 
 /*-- scss::rules --*/
+.dropdown-menu .dropdown-item {
+  background-color: $theme-primary-dark !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: lighten($theme-primary-dark, 5%) !important;
+}

@@ -14,9 +14,17 @@ website:
     - text: Blog
       href: blog/index.qmd
     - text: dataviz
-      href: dataviz/index.qmd
-    - text: R Packages
-      href: r_packages/index.qmd
+      menu: 
+        - text: "Tidy Tuesday"
+          href: dataviz/tidy_tuesday/tidy_tuesday.qmd
+        - text: "Swedish Politics"
+          href: dataviz/swedish_politics/swedish_politics.qmd
+    - text: Projects
+      menu: 
+        - text: "R packages" 
+          href: projects/r_packages.qmd
+        - text: "Applications"
+          href: projects/applications.qmd
   
   page-footer: 
     left: >- 
