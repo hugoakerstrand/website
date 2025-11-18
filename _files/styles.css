@@ -148,6 +148,7 @@
   .about-image {
     order: 1 !important;
     padding: 0.5em !important;
+    margin-top: 1.25rem !important;
   }
 
   /* small spacing tweak so the image doesn't overlap other things */

@@ -53,7 +53,7 @@ in developmental immunology from Lund Stem Cell Center, Sweden. I combine a stro
 understanding of **wet lab** science with a passion for **R programming**. 
 
 I use my *bilingual* skill set to **develop tools**, **explore, visualize** and
-**analyze data**, that lie close to the needs and expectations of life science 
+**analyze data** in a natural way to the needs and expectations of life science 
 researchers. 
 
 On my free time, I follow Swedish politics and as a hobby I try to summarize relevant
