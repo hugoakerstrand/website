@@ -84,67 +84,59 @@
 }
 
 /* mobile query up for screens up to ~992px wide */
-/* NB! this is a direct lift from https://github.com/spcanelon/silvia/tree/main/assets/index.css */
 @media screen and (max-width: 991.98px) {
-    /* move text up & center */
-    .entity-contents {
-      order: 2 !important;
-      margin: -4em 0 0 0 !important;
-      padding: 0 0 0 0em !important;
-      text-align: center !important;
-    }
 
-    /* center subtitle */
-    .subtitle {
-      text-align: center !important;
-    }
+/* NB! this is a direct lift from https://github.com/spcanelon/silvia/tree/main/assets/index.css */
+  .entity-contents {
+    order: 2 !important;
+    margin-top: -4em !important;
+    text-align: center !important;
+  }
 
-    /* social links: block of links */
-    .about-entity .about-links {
-      justify-content: center !important;
-      font-size: 1em !important;
-    }
+  .subtitle {
+    text-align: center !important;
+  }
 
-    /* blurb */
-    .about-contents {
-      padding: 0 0 0 0em !important;
-    }
+  .about-entity .about-links {
+    justify-content: center !important;
+    font-size: 1em !important;
+  }
 
-    /* center Learn More About Me */
-    .about-links.subtitle {
-      justify-content: center !important;
-    }
+  .about-contents {
+    padding: 0 !important;
+  }
 
-    /* move image up, adjust padding */
-    .about-image {
-      order: 1 !important;
-      padding: 0.5em 0.5em 0.5em 0.5em !important;
-    }
-    
-    /* Assuming the body or a main wrapper contains your page content + footer */
+  .about-links.subtitle {
+    justify-content: center !important;
+  }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .page-wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Make wrapper at least full viewport height */
-    }
-    
-    /* The main content area: grow to fill available space */
-    .page-content {
-      flex: 1;
-    }
-    
-    /* Footer styles */
-    footer.site-footer {
-      /* adjust selector to match your footer */
-      flex-shrink: 0; /* do not shrink footer */
-      /* you can add your existing footer styling here (background, padding, etc.) */
-    }
+  .about-image {
+    order: 1 !important;
+    padding: 0.5em !important;
+  }
 
+
+
+/* ----- mobile-only sticky footer ----- */
+
+  /* Only override html/body on mobile */
+  html, body {
+    height: 100%;
+  }
+
+  /* Wrapper for the entire Quarto page */
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Main content grows to push footer down */
+  .page-content {
+    flex: 1;
+  }
+
+  footer.site-footer {
+    flex-shrink: 0;
+  }
 }
