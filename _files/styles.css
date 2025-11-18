@@ -10,6 +10,12 @@
 .quarto-color-scheme-toggle {
 }
 
+/* Body */
+.body {
+   padding:0px;
+   margin: 0px;
+}
+
 /* Footer */
 .nav-footer-center .fa-brands,
 .nav-footer-center .fa-solid,
