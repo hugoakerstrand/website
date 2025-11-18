@@ -86,28 +86,63 @@
 /* mobile query up for screens up to ~992px wide */
 @media screen and (max-width: 991.98px) {
 
-/* NB! this is a direct lift from https://github.com/spcanelon/silvia/tree/main/assets/index.css */
+  /* --- ensure wrapper uses column flex (mobile only) --- */
+  /* add a few likely Quarto wrappers so this covers common markup */
+  .page-wrapper,
+  .site,
+  .quarto-site,
+  main#main,
+  .quarto-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* main content should grow so footer is pushed to bottom */
+  main#main,
+  .page-content,
+  .quarto-main,
+  .content {
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+
+  /* normalize footer selectors (defensive) */
+  footer.site-footer,
+  footer,
+  .footer,
+  .site-footer {
+    flex-shrink: 0;
+  }
+
+  /* --- tame the image so it cannot grow the page --- */
+  /* target your about-image and the nested img element */
+  .about-image,
+  .about-image img {
+    max-height: 40vh;        /* never taller than 40% of viewport height */
+    height: auto !important; /* prefer intrinsic scaling */
+    width: auto !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;     /* keep aspect ratio without cropping */
+  }
+
+  /* If your image is inside a centered absolute container, undo that on mobile */
+  .quarto-about-solana,
+  .about-entity,
+  .about-wrapper {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+  }
+
+  /* remove dangerous negative margins that can push other blocks */
   .entity-contents {
-    order: 2 !important;
-    margin-top: -4em !important;
-    text-align: center !important;
-  }
-
-  .subtitle {
-    text-align: center !important;
-  }
-
-  .about-entity .about-links {
-    justify-content: center !important;
-    font-size: 1em !important;
-  }
-
-  .about-contents {
-    padding: 0 !important;
-  }
-
-  .about-links.subtitle {
-    justify-content: center !important;
+    margin-top: 0 !important;
+    order: 2 !important;    /* keep text after image if you want */
   }
 
   .about-image {
@@ -115,28 +150,9 @@
     padding: 0.5em !important;
   }
 
-
-
-/* ----- mobile-only sticky footer ----- */
-
-  /* Only override html/body on mobile */
-  html, body {
-    height: 100%;
-  }
-
-  /* Wrapper for the entire Quarto page */
-  .page-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  /* Main content grows to push footer down */
-  .page-content {
-    flex: 1;
-  }
-
-  footer.site-footer {
-    flex-shrink: 0;
+  /* small spacing tweak so the image doesn't overlap other things */
+  .about-contents {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
   }
 }
