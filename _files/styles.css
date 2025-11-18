@@ -118,6 +118,6 @@
     /* move image up, adjust padding */
     .about-image {
       order: 1 !important;
-      padding: 0 2em 0 2em !important;
+      padding: 0em 0em 0em 0em !important;
     }
 }

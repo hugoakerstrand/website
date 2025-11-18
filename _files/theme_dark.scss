@@ -29,3 +29,40 @@ $navbar-bg: $theme-primary-dark;
 .dropdown-menu .dropdown-item:focus {
   background-color: lighten($theme-primary-dark, 5%) !important;
 }
+
+// Mobile (from Silvia Canelon: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme-light.scss)
+
+@media screen and (max-width: 991.98px) {
+  // social media links
+  .about-entity .about-links {
+    flex-direction: row !important;
+    justify-content: center !important;
+  }
+
+  // navigation footer
+  .nav-footer {
+      flex-direction: row;
+    }
+
+  .nav-footer-center {
+    order: 1 !important;
+    flex-basis: 100%;
+    margin: 0 0 -1.2em 0;
+  }
+
+  .nav-footer-right {
+    order: 2 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .nav-footer-left {
+    order: 3 !important;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .navbar .quarto-navbar-tools {
+    text-align: left;
+  }
+}
