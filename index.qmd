@@ -7,8 +7,8 @@ subtitle: |
     <!-- <a href=https://pubmed.ncbi.nlm.nih.gov/?term=%C3%85kerstrand+H&cauthor_id=35088351> {{< ai pubmed >}}</a> -->
     <!-- <a href=https://orcid.org/0000-0003-2457-0764> {{< ai orcid >}}</a> -->
     <!-- <a href=mailto:hugo.akerstrand@gmail.com/>  {{< fa solid envelope >}}</a> -->
-image: _files/website/img/profile.jpg
-image-alt: Headshot of Hugo Åkerstrand. Photo by Svetlana Åkerstrand.
+# image: _files/website/img/profile.jpg
+# image-alt: Headshot of Hugo Åkerstrand. Photo by Svetlana Åkerstrand.
 about: 
   template: solana
   image-width: 20em
@@ -46,18 +46,28 @@ execute:
 ---
 
 ::: {#hero-heading}
-# Welcome!
+<!-- # Welcome! -->
 
-I am Hugo, a life science researcher and R programmer. I hold a PhD
-in developmental immunology from Lund Stem Cell Center, Sweden. I combine a strong
-understanding of **wet lab** science with a passion for **R programming**. 
+```{r, echo=TRUE, eval=TRUE}
+age_of_AI <- TRUE
+Hugo <- function() {
+  for(human in length(age_of_AI)) {
+    return("A human in the loop")
+  }
+}
+Hugo()
+```
 
-I use my *bilingual* skill set to **develop tools**, **explore, visualize** and
-**analyze data** in a natural way to the needs and expectations of life science 
-researchers. 
+<!-- I am Hugo, a life science researcher and R programmer. I hold a PhD -->
+<!-- in developmental immunology from Lund Stem Cell Center, Sweden. I combine a strong -->
+<!-- understanding of **wet lab** science with a passion for **R programming**.  -->
 
-On my free time, I follow Swedish politics and as a hobby I try to summarize relevant
-topics using a single graph of key data.
+<!-- I use my *bilingual* skill set to **develop tools**, **explore, visualize** and -->
+<!-- **analyze data** in a natural way to the needs and expectations of life science  -->
+<!-- researchers.  -->
+
+<!-- On my free time, I follow Swedish politics and as a hobby I try to summarize relevant -->
+<!-- topics using a single graph of key data. -->
 :::
 
 <!-- hero-heading -->

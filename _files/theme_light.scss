@@ -19,6 +19,11 @@ $body-bg: darken($theme-primary-light, 2%);
 $navbar-bg: darken($theme-primary-light, 1%);
 
 /*-- scss::rules --*/
+
+// About code chunk
+#cb1 {
+  background-color: darken($theme-primary-light, 5%);
+}
 // Mobile (from Silvia Canelon: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme-light.scss)
 
 @media screen and (max-width: 991.98px) {

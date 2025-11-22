@@ -30,6 +30,17 @@ $navbar-bg: $theme-primary-dark;
   background-color: lighten($theme-primary-dark, 5%) !important;
 }
 
+/*-- scss::rules --*/
+
+// About code chunk
+#cb1 {
+  background-color: $theme-primary-dark;
+}
+
+.cell-output code{
+  color: $theme-font-dark;
+}
+
 // Mobile (from Silvia Canelon: https://github.com/spcanelon/silvia/blob/main/assets/silvia-theme-light.scss)
 
 @media screen and (max-width: 991.98px) {
