@@ -62,11 +62,11 @@
 }
 
 /* About image */
-.about-image.round {
+.about-image {
   width: 16em !important;
   height: 16em !important;
   margin-right: 1em;
-  margin-top: -1.85em;
+  margin-top: 0em;
 }
 
 /* About content */
