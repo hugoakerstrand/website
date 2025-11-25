@@ -7,7 +7,7 @@
 #    <!-- <a href=https://pubmed.ncbi.nlm.nih.gov/?term=%C3%85kerstrand+H&cauthor_id=35088351> {{< ai pubmed >}}</a> -->
 #    <!-- <a href=https://orcid.org/0000-0003-2457-0764> {{< ai orcid >}}</a> -->
 #    <!-- <a href=mailto:hugo.akerstrand@gmail.com/>  {{< fa solid envelope >}}</a> -->
-image: ../_files/website/img/profile.jpg
+image: ../_files/website/img/profile.webp
 image-alt: Headshot of Hugo Åkerstrand. Photo by Svetlana Åkerstrand.
 about: 
   template: solana
