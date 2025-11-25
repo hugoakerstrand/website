@@ -50,9 +50,14 @@ execute:
 
 ```{r, echo=TRUE, eval=TRUE}
 age_of_AI <- TRUE
-Hugo <- function() {
-  for(human in length(age_of_AI)) {
-    return("A human in the loop")
+Hugo <- function(
+    thinking = TRUE,
+    learning = TRUE, 
+    developing = TRUE) {
+  if(all(c(thinking, learning, developing))) {
+    for(human in length(age_of_AI)) {
+      return("A human in the loop")
+    }
   }
 }
 Hugo()
