@@ -1,75 +1,61 @@
 ---
 title: "A Vision for Wet Lab Digitalization"
-description: "My vision and goals for achieving digitalized, reproducible, interoperable,
-and data-driven life science research."
+description: "My vision and goals for achieving digitalized, reproducible, 
+interoperable, and automated life science research."
 author: "Hugo Åkerstrand"
 date: "2025-11-16"
 categories:
-  - Digitalize wet lab
-  - Computational biology
-  - Pipeline development
-  - Reproducible research
+  - Digitalization of Life Science Research
+  - Computational Biology
+  - Pipeline Development
+  - Reproducible Research
 ---
 
-# A Typical Life Science Experimentation Cycle
-Wet lab scientists, that is scientists that work with samples in a physical lab 
-spaces, conduct an experiment using specialized machines and analyzes the results 
-in proprietary software. After extensive point-and-click operations, a results 
-file emerges. This data may or may not be further analyzed in other software 
-packages to, ultimately, generate graphs and statistical tests. The results are
-carefully logged by writing reports, collecting the details on 
-how the experiment was made.
+## The one thing that I have loved doing this year was working on pipeline development for wet lab data analysis
+More specifically, I have been drawing upon my domain knowledge on flow
+cytometry to develop an R package for automated data analysis. In case you don't
+know what I'm talking about, flow cytometry is an advanced methodology combining
+fluidics, optics, and electronics to analyze thousands of cells per second for
+characteristics and classification. And that's *really neat*, but it has a big
+bottleneck in the subsequent data analysis relying on point-and-click,
+proprietary software. Such analysis is inefficient, subjective, and hard to
+normalize across different experiments.
 
-Here's how this process typically unfolds:
+### And this problem is bigger than flow cytometry
+Life science research has this problem in general: specialized data from
+specialized techniques has lead to the development of specialized point-and-click
+proprietary software. And that has its place, absolutely — I'm not being
+high-nosed saying everyone should *just do* statistical programming instead —
+but the truth is that the above workflow has some serious issues and
+limitations:
 
-```
-Hypothesis → Wet Lab Data Collection → Intermediate Analysis →
-Visualization/statistical tests → Hypothesis
-```
+- It suffers from low reproducibility - essentially the user has to go out of their
+way to document the settings of every specific analysis.
+- Its inefficiency means that it takes up a lot of time and creates resistance to address potential mistakes, do necessary changes (SOP versions, request from collaborators or reviewers), or in general tune the analysis by iterative experimentation.
+- Specialized software means separating data analysis and its visualization, making it hard to
+match any given graph with a version of the analysis.
+- It creates data silos that are hard to combine into a cohesive whole - which 
+diminishes the value of the whole body of data to its individual components and 
+foregoes their use in ML and LLMs. 
 
-This workflow forms the foundation of life science research, but it comes with
-significant problems:
+Digitalization - the act of creating code-driven pipelines for data processing 
+and visualization - address all of the above. It also frees up time for scientists 
+and technicians to think, read, plan, and collaborate. Finally, It enables live monitoring of long experiments, to identify bottlenecks or catch failing
+batches early on. 
 
-### How Was That Data Generated?
-Now imagine the same scientist wants to include these results in a research
-paper. Can they remember exactly how the result was generated? Which buttons
-they clicked? What parameters they used? What outliers they excluded?
-This sub-optimal workflow—through no fault of the individual
-scientist—contributes to what's colloquially known as the 
-[replication crisis](https://en.wikipedia.org/wiki/Replication_crisis). When the 
-path from raw data to final figure exists only in mind and muscle memory,
-true reproducibility becomes impossible.
+## How to reach Nirvana (digitalization)?
+I boil this down to three specific components:
 
-### Where Does This Data Come From?
-Create tracability of data across the whole value chain. 
+- Automate intermediate data analysis
+- Develop relevant statistical programming packages (e.g. for flow cytometry analysis)
+- Centralize data into databases to generate automatic, standardized reports, make it 
+available to non-coding stakehodlers, and use it for ML and with LLMs 
 
-The reliance on proprietary software and manual analysis has resulted in
-countless 'data silos'—hermetically sealed pieces of data that are nearly
-impossible to integrate into collective datasets. Breaking down these silos
-would lay the foundation for efficient machine learning and effective use of
-large language models.
+Luckily, we can tap into a lf a lot of the pre-existing infrastructure — R and
+Python packages and tools that have already been developed for other data science
+tasks.
 
-Imagine if all your flow cytometry data from the past five years could be
-queried together. Imagine if an AI could spot patterns across experiments that
-your manual analysis missed. Imagine if new analytical approaches could be
-retroactively applied to old data without starting from scratch.
-
-Traditional Workflows Use Only a Fraction of the Data's Capacity
-
-### To err is human, automation is divine 
-Automated reporting using dynamic documents
-
-Some quick wins:
-- Free up time for thinking about your research, read papers, or have important meetings
-- Enable rapid iteration of hypothesis testing and data exploration
-- Electronic batch records (EBRs) from repeated runs
-- Identify bottlenecks and failing batches
-- Live monitoring
-- Ease data sharing: with collaborators, reviewers, etc.
-- Flexible science: in response to reviewer, audits, changes in SOP. Also general experimentation
-- Create tracability across the whole data value chain
-
-## An Attempt at Digitalization
+### My (current) vision for lab digitalization
 
 Here's what I'm working toward:
 
@@ -83,52 +69,32 @@ Here's what I'm working toward:
   - Rapid exploration using Shiny applications
   - Reproducible data management and exploration using Shinychat
 
-This isn't a pipe dream. The tools exist. The ecosystem is mature. What's needed is the vision to put them together.
+A digitalized life science project in this vision looks like:
 
-## The R Ecosystem for Digitalized Life Science
+1. Data is exported to a common storage (e.g. AWS S3 bucket)
+2. Scheduled jobs scan for new data and writes it using {pins}
+3. The updated data triggers the {targets} pipeline, which re-runs the analysis
+4. Results are written to Quarto dashboards, that gets published
 
-Let me walk you through the key packages that make this vision achievable:
+### Set Up Automation:  
+There are many Make for pipeline development: track changes, only run on upstream
+changes
 
-### Get the Data: {pins}
-
-[![](https://pins.rstudio.com/logo.png){style="float: right; margin-top: 20px;" width=150}](https://pins.rstudio.com/)
-
-The `{pins}` package provides a way to publish, version, and share data. Whether your data lives in a shared drive, a cloud service, or a database, `{pins}` creates a consistent interface. It's like Git for data—you can version your datasets, track changes, and ensure everyone is working with the same inputs.
-
-### Set Up Automation: {targets} 
-
-[![](https://docs.ropensci.org/targets/logo.svg){style="float: right; margin-top: 20px;" width=150}](https://docs.ropensci.org/targets/)
-
-The `{targets}` package is the backbone of reproducible pipelines. It understands your analysis as a network of dependencies and automatically:
+[![](https://docs.ropensci.org/targets/logo.svg){style="float: right;" width=150}](https://docs.ropensci.org/targets/)
+The `{targets}` package will be the backbone of our reproducible, automated pipeline. 
+It understands our analysis as a network of dependencies and automatically:
 - Tracks what's changed since the last run
 - Re-runs only the parts that need updating
 - Parallelizes independent steps
 - Provides a clear visual map of your entire workflow
 
-Write your analysis once. Run it a thousand times. Change one parameter and only the affected downstream steps re-execute. This is the difference between a script and a pipeline.
 
-### Ensure Reproducibility: {renv}
-[![](https://rstudio.github.io/renv/logo.svg){style="float: right; margin:top 20px;" width=150}](https://rstudio.github.io/renv/)
-
-Package versions change. Functions get deprecated. What works today might break tomorrow. The `{renv}` package creates a project-specific library that locks down exactly which versions of which packages you're using. Your future self—and anyone trying to reproduce your work—will have the exact computational environment you used.
-
-### Intermediate Data Analysis
-
-**General purpose:** The `{tidyverse}` provides intuitive, consistent syntax for data manipulation and visualization. If you can describe what you want in English, you can probably write it in tidyverse code.
-
-[![](https://tidyverse.tidyverse.org/logo.png){style="float: right; margin: top 20px;" width=150}](https://tidyverse.tidyverse.org/)
-
-**Domain-specific tools:** Packages like `{Seurat}` for single-cell RNA-seq bring cutting-edge methods to your fingertips, developed and maintained by experts in the field.
-
-[![](https://satijalab.org/seurat/output/images/SeuratV5.png){style="float: right; margin: top 20px;" width=150}](https://satijalab.org/seurat/https://satijalab.org/seurat/)
-
+### Develop relevant tooling for Intermediate Data Analysis
+Seurat for analyzing single cell data.
 **Your own tools:** This is where [`{flowplyr}`](https://hugoakerstrand.github.io/flowplyr/) comes in—my own contribution to making flow cytometry analysis more reproducible and pipeable. When existing tools don't quite fit your needs, the R package ecosystem makes it straightforward to build and share your own solutions.
-
-### Model Using {tidymodels}
-
-[![](https://tidymodels.tidymodels.org/logo.png){style="float: right; margin: top 20px;" width=150}](https://tidymodels.tidymodels.org/)
-
-When you're ready to move beyond traditional statistics into machine learning, `{tidymodels}` provides a unified interface to hundreds of modeling approaches. The same consistent syntax whether you're doing linear regression or random forests or neural networks.
+<!-- [![](https://tidymodels.tidymodels.org/logo.png){style="float: right; margin: top 20px;" width=150}](https://tidymodels.tidymodels.org/) -->
+<!-- [![](https://tidyverse.tidyverse.org/logo.png){style="float: right; margin: top 20px;" width=150}](https://tidyverse.tidyverse.org/) -->
+<!-- [![](https://satijalab.org/seurat/output/images/SeuratV5.png){style="float: right; margin: top 20px;" width=150}](https://satijalab.org/seurat/https://satijalab.org/seurat/) -->
 
 ### Generate Dashboards: {Quarto}
 
@@ -143,7 +109,17 @@ Quarto is the next generation of R Markdown, and it's spectacular. Write your an
 
 Your source code *is* your report. Change the data, re-render the document. Everything stays in sync, automatically.
 
-### Flexibility Through {Shiny} and {shinychat}
+### Other important packages for automation and digitalization
+- Read, write, and version control data, objects, and models using [{pins}](https://pins.rstudio.com/) 
+<!-- [![](https://pins.rstudio.com/logo.png){style="float: right; margin-top: 20px;" width=150}]() -->
+- Create reproducible environment for a specific project using [{renv}](https://rstudio.github.io/renv/index.html)
+<!-- [![](https://rstudio.github.io/renv/logo.svg){style="float: right; margin:top 20px;" width=150}](https://rstudio.github.io/renv/) -->
+
+
+## Leverage genAI and LLM
+[![](https://ellmer.tidyverse.org/logo.png){style="float: right; margin: top 20px;" width=150}](https://ellmer.tidyverse.org/)
+
+[![](https://posit-dev.github.io/shinychat/r/logo.svg){style="float: right; margin: top 20px;" width=150}](https://posit-dev.github.io/shinychat/r/)
 
 [![](https://github.com/rstudio/shiny/raw/main/man/figures/logo.png){style="float: right; margin: top 20px;" width=150}](https://shiny.posit.co/)
 
@@ -156,57 +132,3 @@ Imagine a dashboard where you can:
 - Get help debugging your analysis in natural language
 
 This is reproducible data management and exploration powered by LLMs. The future is arriving faster than most of us realize.
-
-### Leverage genAI and LLM
-[![](https://ellmer.tidyverse.org/logo.png){style="float: right; margin: top 20px;" width=150}](https://ellmer.tidyverse.org/)
-
-
-[![](https://posit-dev.github.io/shinychat/r/logo.svg){style="float: right; margin: top 20px;" width=150}](https://posit-dev.github.io/shinychat/r/)
-
-## Putting It All Together
-
-A digitalized life science project in this vision looks like:
-
-1. Data automatically flows from instruments to `{pins}` repositories
-2. A `{targets}` pipeline wakes up, sees new data, and runs your analysis
-3. Intermediate steps are handled by your custom packages (like `{flowplyr}`) built on the tidyverse
-4. Results populate Quarto dashboards automatically
-5. When you need to explore, you spin up a Shiny app—possibly with shinychat for AI assistance
-6. Everything is versioned with `{renv}`, so it will run identically in six months or six years
-
-Is this a lot to learn? Yes. Is it worth it? Absolutely.
-
-## That's a Lot of R: What About Python?
-
-You might be thinking: "This is very R-centric. What about Python? Isn't that what 'real' programmers use?"
-
-Here's my perspective: the specific language matters less than the principles. Reproducibility, automation, documentation, and testing—these principles transcend any particular programming language.
-
-That said, R has many strengths in its favor for life scientists:
-
-- **Exceptional statistical packages** developed by statisticians, not just implemented by programmers
-- **Bioconductor**: the richest ecosystem for biological data analysis, with over 2,000 packages
-- **RStudio**: arguably the most polished IDE for data science work
-- **Tidyverse**: intuitive syntax that reads almost like English
-- **Shiny**: turn analyses into interactive web apps with minimal web development knowledge
-
-Python has its own strengths, particularly in machine learning. I'll certainly dip my toes into Python when it's the right tool for the job. The key is to be pragmatic—use the best tool for your specific need, but don't constantly context-switch unless necessary.
-
-## The Journey Ahead
-
-This vision is simultaneously exciting and overwhelming. There's so much to learn, so many packages to explore, so many new patterns to understand. But here's the thing: you don't need to learn everything at once.
-
-Start small:
-- Move one analysis to Quarto
-- Try `{targets}` for one recurring project
-- Build one Shiny app for exploring your data
-- Write one function and turn it into a package
-
-Each small step compounds. Each automated process frees up time for the next improvement.
-
-I'll be documenting my journey in implementing these principles. The successes, the frustrations, the unexpected discoveries. Stay tuned—we're going to digitalize wet lab science together.
-
----
-
-*What's holding you back from digitalizing your workflows? What tools are you most excited to try? Let me know in the comments.*
-
