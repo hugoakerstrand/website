@@ -1,0 +1,197 @@
+---
+title: "A Vision for Wet Lab Digitalization" 
+description: "My vision and goals for achieving digitalized, reproducible, 
+interoperable, and automated life science research." 
+author: "Hugo Åkerstrand" 
+date: "2025-11-30" 
+categories:
+  - Digitalization of Life Science Research
+  - Computational Biology
+  - Pipeline Development
+  - Reproducible Research
+---
+*Digitalization is the act of converting manual, repetitive, and irreproducible 
+work by lifting it into automatic pipelines. Read on to learn more on how I work 
+to achieving this vision! And although I talk about my field of work in life 
+science research, I believe these insights shared across many sectors so 
+hopefully any reader can see their own work through the lens of mine!*
+
+**What I have loved working on in 2025 is a pipeline for automation of wet lab 
+data analysis.** More specifically, I have used my domain knowledge from the PhD 
+to develop an R package handling flow cytometry data: a common methodology in 
+life science research that can analyze thousands of cells per second for 
+characteristics and classification.
+
+::: {#flow-cytometry-overview-vid}
+
+{{< video https://www.youtube.com/watch?v=B2zreF2dnWk >}}
+
+:::
+
+And it is a *really neat methodology* that is used routinely, especially so in 
+my field of immunology and stem cell research. However, it currently has a big 
+bottleneck: the subsequent data analysis relies on point-and-click, proprietary 
+software. Manual processing of up to millions of cells per sample and slight, 
+but significant, sample-to-sample variation means that the analysis becomes 
+inefficient, subjective, and hard to normalize across repeated experiments. 
+Making things worse, it is not an acceptable format for submission to regulatory 
+agencies.
+
+So to overcome this, while I was working at Novo Nordisk, I was developing an R
+package for clearly defined, reproducible, and automated flow cytometry data 
+analysis. It handled everything, from data processing to visualization - and was
+my first, serious attempt at package development. And I loved it. Much thanks
+to great, available [resources](https://r-pkgs.org/) I was able to make my first
+package have all the nuts and bolts of the type of packages I routinely install
+from Github or CRAN. 
+
+Unfortunately, we didn't get to see it go live in the Cell Therapy Unit as it
+was closed this October, following the company's reorganization. But my time at 
+Novo Nordisk, and working with great colleagues who championed and pushed for 
+digitalization and automation, had peaked my interest - and I could see that the 
+need was much bigger than just flow cytometry.
+
+## Why life science research needs more digitalization
+We have a big unmet need for digitalization in the life science field. Following
+the development over the last decades, there are now many methods that require
+specialized equipment and methodology. This has lead to a common problem:
+specialized, proprietary software for data analysis. I'm not trying to be
+high-nosed saying that everyone should *just do statistical programming*
+instead, there is really great software out there that has been absolutely
+pivotal to the advancement of the field. But the truth is that the *workflow*
+that has been adopted by scientists as a result has some serious issues and
+limitations:
+
+- It suffers from **low reproducibility**, with users having to put efforts to 
+keeping accurate records of settings used for each piece of data.
+- It's **inefficient**, with operators having to spend hours clicking around to
+analyze their experiments.  
+- It is **inflexible**, leading to resistance to address potential mistakes, 
+do necessary changes (e.g. a new SOP or on request from collaborators or 
+reviewers), or try novel ways to analyze the data. 
+- It **splits** intermediate data processing from statistical analysis and data 
+visualization, making them hard to link.
+- It creates **data silos**, isolated experiments and/or data types that are 
+hard to combine to a collective overview - foregoing their use in statistical 
+models or context for LLMs. 
+
+Digitalization - *that I define as the act of creating code-driven pipelines for
+data processing* - address all of these concerns, and, when combined with data
+visualization, it can do even more. For example, a good pipeline could do live
+monitoring of long experiments, identify hard-to-catch bottlenecks or warn about
+failing batches early. I believe that digitalization could free up time to
+think, read, plan, create, and collaborate.
+
+### How to get there
+Many individuals and organization are working towards digitalization and, 
+naturally, there isn't a one-way to success here. Here is how I want to approach 
+it:
+
+- **Automate** intermediate data processing- it is time consuming, a hindrance
+to reproducibility, and, frankly put, boring work. Instead, have automated 
+pipelines handle type specific data and save it to a common format that can be 
+further processed and/or combined.
+- **Develop** relevant statistical programming packages, like the one I was 
+working on at Novo Nordisk. Thankfully, a lot of great packages are already 
+maintained by experts in their fields - making it a matter of incorporating it
+into the pipeline.
+- **Organize** data into databases for automatic generation of standardized 
+reports, for use in interactive apps or dashboards, and use it for machine 
+learning and LLM context. 
+
+Before continuing, let me clarify that I believe the data should *still be
+readily accessible to scientists*. This is important, that it doesn't feel like
+a loss in control of the scientist: the
+automated, digitalized  arm should provide a convenient ground truth for
+the scientists that otherwise work with the data. I also wasnt to emphasize that
+I believe in open source
+development of these solutions, to help spread knowledge, implementation, share
+best-practices, and make it available as training data for LLMs.
+
+## My current vision for lab digitalization
+This vision has me real excited, and so, while looking for a new job to apply
+these ideas, I will test out these principles and solutions with my own 
+projects. And I plan to share that journey on this blog.
+
+Here is my current, big picture vision for how to achieve a digitalized data
+workflow:
+
+1. New data is moved to a centralized storage (I will use AWS S3).
+2. It triggers processing by a dedicated pipeline (running on a 
+[cron job](https://en.wikipedia.org/wiki/Cron)).
+3. New processed data, in turn, triggers another pipeline to update a dashboard
+or web app.
+4. The processed data is stored in an accessible format and can be used for 
+model development, LLM context, or otherwise downstream analysis.
+
+Here is how I plan to start:
+
+### Pipeline development 
+Pipelines control workflows that are triggered upon changes in their source data. 
+[![](https://docs.ropensci.org/targets/logo.svg){style="float: right;
+padding: 20px; margin-top: -10px;" width=225}](https://docs.ropensci.org/targets/)
+There are [many pipeline tools](https://github.com/pditommaso/awesome-pipeline), 
+so which one to chose? Being an R programmer, the obvious start for me will be 
+[{targets}](https://docs.ropensci.org/targets/). With it, I can use my familiar 
+workflow using R to create a network of dependencies that will automatically:
+
+- Track changes in the dependencies (e.g. incoming raw or processed data).
+- Re-run the pipeline - but only the parts that need updating, based on a 
+dependency graph.
+- Will be efficient by using implicit parallelization.
+- Will easily be checked using a clear visual map as I set up the workflow.
+
+I will also make sure to have a look at other tools outside of R, like 
+[snakemake](https://snakemake.readthedocs.io/en/stable/#).
+
+### Develop relevant packages for intermediate data analysis 
+I will continue working on flow cytometry data analysis within R - but with a 
+fresh approach. My new package 
+[{flowplyr}](https://hugoakerstrand.github.io/flowplyr/) is not the same as what
+I was developing at Novo Nordisk, that was trying to mimic the natural work flow
+of a flow cytometry operator (but instead of point-and-click with statistical 
+functions using sensible defaults). Now, I instead want to instead get the data 
+out of the `flowCore::flowSet()` and into a tibble as soon as possible - because: 
+
+1. I want to leverage well-established statistical programming packages (like 
+[tidymodels](https://www.tidymodels.org/)), which expects a certain object
+type.
+2. I want to take advantage of functional programming that is natural to R: by
+storing the data as list columns in a data frame, one can easily apply functions
+to mutate, model, or visualize the data. 
+3. I want to store the data for efficient computing, e.g. using 
+[{Arrow}](https://arrow.apache.org/docs/r/)
+
+### Generate dashboards and web applications
+Finally, I will continue to learn how to develop elegant and efficient user 
+interfaces. I plan to do so using both dashboards and web applications.
+
+#### Generate dashboards using {Quarto}
+[Quarto](https://quarto.org/) is an open source publishing system that allows 
+blending code with text, images, videos, etc. [![](https://quarto.org/quarto.png){style="float: right; 
+padding: 20px" width=200}](https://quarto.org) Additionally, it allows the output 
+of several different document types; indeed, this website
+was published using Quarto! Publishing with Quarto by leveraging advanced code 
+evaluation is very powerful and something I am only beginning to explore.
+
+#### Web applications using {Shiny} 
+To make the content into an interactive interface, I'll be using 
+[{Shiny}](https://shiny.posit.co/). 
+[![](https://posit-dev.github.io/shinychat/r/logo.svg){style="float: right; 
+padding: 20px" width=200}](https://posit-dev.github.io/shinychat/r/)
+I have previous tried out developing a simple Shiny application for a colleague
+at Novo Nordisk, and it was amazing a simple application could save hours of 
+clicking around in Excel. Now, I am particularly excited to test 
+[{Shinychat}](https://posit-dev.github.io/shinychat/r/) that makes it
+easy to add a chatbot to your app. This, coupled with a lot of other great
+packages from the team at [Posit](https://posit.co/) will be the foundation for
+my work on LLMs to provide the [data as context](https://ragnar.tidyverse.org/),
+augment functionality using 
+[tool calling](https://ellmer.tidyverse.org/articles/tool-calling.html), and 
+more.
+
+## Until next time
+Underlying all these efforts will be many, many more packages and tools then I
+cannot mention in a single post: I will make sure to write out the details
+as I develop. With this, I have finished my first blog post - thanks for 
+reading!
