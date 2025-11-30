@@ -16,6 +16,33 @@
    margin: 0px;
 }
 
+/* p - only justify in main content */
+main p,
+article p,
+.content p {
+  text-align: justify;
+}
+
+/* Keep footer centered */
+footer p,
+.footer p,
+.nav-footer-center p {
+  text-align: center;
+}
+
+.nav-fooger-left p {
+  text-align: "left";
+}
+/* .main .content */
+main .content, 
+main.content,
+article .content,
+article.content {
+  max-width: 800px; 
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* Footer */
 .nav-footer-center .fa-brands,
 .nav-footer-center .fa-solid,
