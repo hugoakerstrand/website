@@ -10,11 +10,12 @@ categories:
   - Pipeline Development
   - Reproducible Research
 ---
-*Digitalization is the act of converting manual, repetitive, and irreproducible 
-work by lifting it into automatic pipelines. Read on to learn more on how I work 
-to achieving this vision! And although I talk about my field of work in life 
-science research, I believe these insights shared across many sectors so 
-hopefully any reader can see their own work through the lens of mine!*
+*"Digitalization" is the act of converting manual, repetitive, and 
+irreproducible work by lifting it into automatic pipelines. Read on to learn 
+more on how I work to achieving this vision! And although I talk about my work 
+in life science research, I believe these insights can be shared across many 
+sectors so that, hopefully, a reader can see their own work through the lens of 
+my own!*
 
 **What I have loved working on in 2025 is a pipeline for automation of wet lab 
 data analysis.** More specifically, I have used my domain knowledge from the PhD 
@@ -41,7 +42,7 @@ So to overcome this, while I was working at Novo Nordisk, I was developing an R
 package for clearly defined, reproducible, and automated flow cytometry data 
 analysis. It handled everything, from data processing to visualization - and was
 my first, serious attempt at package development. And I loved it. Much thanks
-to great, available [resources](https://r-pkgs.org/) I was able to make my first
+to great [resources](https://r-pkgs.org/) available I was able to make my first
 package have all the nuts and bolts of the type of packages I routinely install
 from Github or CRAN. 
 
@@ -103,10 +104,10 @@ Before continuing, let me clarify that I believe the data should *still be
 readily accessible to scientists*. This is important, that it doesn't feel like
 a loss in control of the scientist: the
 automated, digitalized  arm should provide a convenient ground truth for
-the scientists that otherwise work with the data. I also wasnt to emphasize that
-I believe in open source
-development of these solutions, to help spread knowledge, implementation, share
-best-practices, and make it available as training data for LLMs.
+the scientists that otherwise work with the data. I also want to emphasize that
+I believe in open source development of these solutions, to help spread
+knowledge, implementation, share best-practices, and make it available as
+training data for LLMs.
 
 ## My current vision for lab digitalization
 This vision has me real excited, and so, while looking for a new job to apply
@@ -133,7 +134,7 @@ padding: 20px; margin-top: -10px;" width=225}](https://docs.ropensci.org/targets
 There are [many pipeline tools](https://github.com/pditommaso/awesome-pipeline), 
 so which one to chose? Being an R programmer, the obvious start for me will be 
 [{targets}](https://docs.ropensci.org/targets/). With it, I can use my familiar 
-workflow using R to create a network of dependencies that will automatically:
+workflow to create a network of dependencies that will automatically:
 
 - Track changes in the dependencies (e.g. incoming raw or processed data).
 - Re-run the pipeline - but only the parts that need updating, based on a 
@@ -148,10 +149,11 @@ I will also make sure to have a look at other tools outside of R, like
 I will continue working on flow cytometry data analysis within R - but with a 
 fresh approach. My new package 
 [{flowplyr}](https://hugoakerstrand.github.io/flowplyr/) is not the same as what
-I was developing at Novo Nordisk, that was trying to mimic the natural work flow
-of a flow cytometry operator (but instead of point-and-click with statistical 
-functions using sensible defaults). Now, I instead want to instead get the data 
-out of the `flowCore::flowSet()` and into a tibble as soon as possible - because: 
+I was developing at Novo Nordisk, which was trying to mimic the natural work flow
+of a flow cytometry operator (replacing point-and-click with statistical 
+functions using sensible defaults). Now, I instead want to get the data 
+out of the `flowCore::flowSet` object and into a tibble as soon as possible - 
+because: 
 
 1. I want to leverage well-established statistical programming packages (like 
 [tidymodels](https://www.tidymodels.org/)), which expects a certain object
@@ -171,8 +173,9 @@ interfaces. I plan to do so using both dashboards and web applications.
 blending code with text, images, videos, etc. [![](https://quarto.org/quarto.png){style="float: right; 
 padding: 20px" width=200}](https://quarto.org) Additionally, it allows the output 
 of several different document types; indeed, this website
-was published using Quarto! Publishing with Quarto by leveraging advanced code 
-evaluation is very powerful and something I am only beginning to explore.
+was published using Quarto! Leveraging advanced code evaluation is 
+[very powerful](https://www.andrewheiss.com/blog/2024/11/04/render-generated-r-chunks-quarto/)
+and something I am only beginning to explore.
 
 #### Web applications using {Shiny} 
 To make the content into an interactive interface, I'll be using 
@@ -180,8 +183,8 @@ To make the content into an interactive interface, I'll be using
 [![](https://posit-dev.github.io/shinychat/r/logo.svg){style="float: right; 
 padding: 20px" width=200}](https://posit-dev.github.io/shinychat/r/)
 I have previous tried out developing a simple Shiny application for a colleague
-at Novo Nordisk, and it was amazing a simple application could save hours of 
-clicking around in Excel. Now, I am particularly excited to test 
+at Novo Nordisk, and it was striking how a simple application could save hours 
+of clicking around in Excel. I am particularly excited to test 
 [{Shinychat}](https://posit-dev.github.io/shinychat/r/) that makes it
 easy to add a chatbot to your app. This, coupled with a lot of other great
 packages from the team at [Posit](https://posit.co/) will be the foundation for
