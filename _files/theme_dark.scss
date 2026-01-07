@@ -8,9 +8,9 @@ $theme-primary-dark: #181818;
 $theme-font-dark: #ccc;
 $theme-link-dark:  #75AADB;
 
-// Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-$font-family-sans-serif: "Noto Sans", sans-serif;
+// Google Fonts are loaded in fonts.scss (included in _quarto.yml)
+// No need to duplicate the import here
+$font-family-sans-serif: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 // Body
 $body-bg: lighten($theme-primary-dark, 5%);
