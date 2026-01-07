@@ -1,0 +1,65 @@
+---
+title: "An Introduction to Statistical Learning" 
+description: "Working with Python and Tidymodels (R) for statistical learning" 
+author: "Hugo Åkerstrand" 
+date: "2025-12-15" 
+categories:
+  - Python
+  - Tidymodels
+  - Machine Learning
+editor: 
+  markdown: 
+    references: 
+      links: true
+      location: document
+---
+**"Statistical learning"**
+
+[Introduction to Statistical Learning], an excellent book.
+
+I will be working with both R and [Python], using [Tidymodels] for the former.
+
+
+# Test
+s
+## Testing
+test test
+
+
+I am testing things.
+
+
+::: {.panel-tabset}
+## R
+
+``` {.r}
+fizz_buzz <- function(fbnums = 1:50) {
+  output <- dplyr::case_when(
+    fbnums %% 15 == 0 ~ "FizzBuzz",
+    fbnums %% 3 == 0 ~ "Fizz",
+    fbnums %% 5 == 0 ~ "Buzz",
+    TRUE ~ as.character(fbnums)
+  )
+  print(output)
+}
+```
+
+## Python
+
+``` {.python}
+def fizz_buzz(num):
+  if num % 15 == 0:
+    print("FizzBuzz")
+  elif num % 5 == 0:
+    print("Buzz")
+  elif num % 3 == 0:
+    print("Fizz")
+  else:
+    print(num)
+```
+
+:::
+
+[Python]: https://www.lackos.xyz/itsl/
+[Tidymodels]: https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html
+[Introduction to Statistical Learning]: https://www.statlearning.com/
