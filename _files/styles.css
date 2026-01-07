@@ -1,69 +1,23 @@
-/* ===== CRITICAL PERFORMANCE FIXES - MUST BE FIRST ===== */
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
 
-/* Force GPU acceleration for expensive elements */
-.quarto-about-solana,
-.navbar,
-.footer {
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* Contain layout calculations to prevent cascading reflows */
+/* Optimize font rendering */
 body {
-  contain: layout style paint;
-}
-
-.navbar,
-.footer,
-.page-columns,
-main,
-article {
-  contain: layout style;
-}
-
-/* Prevent layout thrashing from absolute positioning */
-.quarto-about-solana {
-  position: fixed;
-  transform: translate(-50%, -50%) translateZ(0);
-  contain: strict;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
 }
 
 /* Optimize image rendering */
-img,
-.about-image,
-.about-image img {
+img {
   content-visibility: auto;
   contain-intrinsic-size: 16em 16em;
-  will-change: auto;
 }
 
-/* Prevent icon reflows */
-.fa,
-.fab,
-.fas,
-.far,
-.fa-brands,
-.fa-solid,
-.ai {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  contain: size layout;
-  font-display: swap;
-}
-
-/* Disable all animations until page loaded */
-* {
-  animation-play-state: paused !important;
-  transition: none !important;
-}
-
-/* Re-enable after page loads */
-.page-loaded * {
-  animation-play-state: running !important;
-  transition: all 0.15s ease !important;
+/* Ensure smooth scrolling on supported browsers */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* ===== ORIGINAL STYLES (OPTIMIZED) ===== */
