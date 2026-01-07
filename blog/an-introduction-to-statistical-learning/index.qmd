@@ -17,11 +17,11 @@ editor:
 
 [Introduction to Statistical Learning], an excellent book.
 
-I will be working with both R and Python, using [Tidymodels] for the former.
+I will be working with both R and [Python], using [Tidymodels] for the former.
 
 
 # Test
-
+s
 ## Testing
 test test
 
@@ -60,9 +60,6 @@ def fizz_buzz(num):
 
 :::
 
-
+[Python]: https://www.lackos.xyz/itsl/
 [Tidymodels]: https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html
 [Introduction to Statistical Learning]: https://www.statlearning.com/
-
-
-
