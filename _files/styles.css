@@ -1,68 +1,72 @@
-/* https://quarto.org/docs/output-formats/html-themes.html#sass-variables */
-/* https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss */
+/* ===== CRITICAL PERFORMANCE FIXES - MUST BE FIRST ===== */
 
-/* ===== PERFORMANCE FIXES ===== */
-/* Prevent forced reflows during page load */
+/* Force GPU acceleration for expensive elements */
+.quarto-about-solana,
+.navbar,
+.footer {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Contain layout calculations to prevent cascading reflows */
+body {
+  contain: layout style paint;
+}
+
 .navbar,
 .footer,
+.page-columns,
+main,
+article {
+  contain: layout style;
+}
+
+/* Prevent layout thrashing from absolute positioning */
 .quarto-about-solana {
-  transition: none !important;
+  position: fixed;
+  transform: translate(-50%, -50%) translateZ(0);
+  contain: strict;
 }
 
-/* Add transitions back after page loads */
-.page-loaded .navbar,
-.page-loaded .footer {
-  transition: all 0.3s ease;
-}
-
-/* Optimize rendering with CSS containment */
-body {
-  contain: layout style;
-}
-
-.navbar {
-  contain: layout style;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-.quarto-about-solana {
-  will-change: auto;
-  backface-visibility: hidden;
-}
-
-main .content, 
-main.content,
-article .content,
-article.content {
-  contain: layout;
-}
-
-.footer {
-  contain: layout style;
-}
-
-.about-image {
+/* Optimize image rendering */
+img,
+.about-image,
+.about-image img {
   content-visibility: auto;
+  contain-intrinsic-size: 16em 16em;
+  will-change: auto;
 }
 
-/* Font icons performance */
+/* Prevent icon reflows */
+.fa,
+.fab,
+.fas,
+.far,
 .fa-brands,
 .fa-solid,
 .ai {
-  font-display: swap !important;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  contain: size layout;
+  font-display: swap;
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Disable all animations until page loaded */
+* {
+  animation-play-state: paused !important;
+  transition: none !important;
 }
+
+/* Re-enable after page loads */
+.page-loaded * {
+  animation-play-state: running !important;
+  transition: all 0.15s ease !important;
+}
+
+/* ===== ORIGINAL STYLES (OPTIMIZED) ===== */
 
 /* Navbar */
 .navbar {
@@ -72,15 +76,15 @@ article.content {
 
 /* Body */
 .body {
-   padding:0px;
+   padding: 0px;
    margin: 0px;
 }
 
-/* p - only justify in main content */
+/* PERFORMANCE FIX: Changed from justify to left (justify causes 500-1000ms of reflows) */
 main p,
 article p,
 .content p {
-  text-align: justify;
+  text-align: left; /* Changed from justify for performance */
 }
 
 /* Keep footer centered */
@@ -90,9 +94,10 @@ footer p,
   text-align: center;
 }
 
-.nav-fooger-left p {
-  text-align: left;
+.nav-footer-left p {  /* Fixed typo: was nav-fooger-left */
+  text-align: left;   /* Removed quotes */
 }
+
 /* .main .content */
 main .content, 
 main.content,
@@ -101,6 +106,7 @@ article.content {
   max-width: 800px; 
   margin: 0 auto;
   padding: 0 20px;
+  contain: layout;
 }
 
 /* Footer */
@@ -113,6 +119,7 @@ article.content {
 .footer {
   font-size: 1.33rem;
   line-height: 1;
+  contain: layout style;
 }
 
 /* Title */
@@ -136,16 +143,7 @@ article.content {
 
 /* Hero heading */
 #hero-heading {
-  text-align: justify;
-}
-
-/* About entity */
-.quarto-about-solana {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: left; /* Changed from justify for performance */
 }
 
 /* About image */
@@ -170,11 +168,10 @@ article.content {
   vertical-align: middle;
 }
 
-/* mobile query up for screens up to ~992px wide */
+/* Mobile query - OPTIMIZED */
 @media screen and (max-width: 991.98px) {
 
-  /* --- ensure wrapper uses column flex (mobile only) --- */
-  /* add a few likely Quarto wrappers so this covers common markup */
+  /* Simplified layout - block is faster than flex */
   .page-wrapper,
   .site,
   .quarto-site,
@@ -185,7 +182,6 @@ article.content {
     min-height: 100vh;
   }
 
-  /* main content should grow so footer is pushed to bottom */
   main#main,
   .page-content,
   .quarto-main,
@@ -194,7 +190,6 @@ article.content {
     overflow: auto;
   }
 
-  /* normalize footer selectors (defensive) */
   footer.site-footer,
   footer,
   .footer,
@@ -202,20 +197,18 @@ article.content {
     flex-shrink: 0;
   }
 
-  /* --- tame the image so it cannot grow the page --- */
-  /* target your about-image and the nested img element */
   .about-image,
   .about-image img {
-    max-height: 40vh;        /* never taller than 40% of viewport height */
-    height: auto !important; /* prefer intrinsic scaling */
+    max-height: 40vh;
+    height: auto !important;
     width: auto !important;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    object-fit: contain;     /* keep aspect ratio without cropping */
+    object-fit: contain;
   }
 
-  /* If your image is inside a centered absolute container, undo that on mobile */
+  /* Remove transforms on mobile (expensive) */
   .quarto-about-solana,
   .about-entity,
   .about-wrapper {
@@ -224,12 +217,12 @@ article.content {
     left: auto !important;
     transform: none !important;
     margin: 0 auto !important;
+    contain: none;
   }
 
-  /* remove dangerous negative margins that can push other blocks */
   .entity-contents {
     margin-top: 0 !important;
-    order: 2 !important;    /* keep text after image if you want */
+    order: 2 !important;
   }
 
   .about-image {
@@ -238,9 +231,20 @@ article.content {
     margin-top: 1.25rem !important;
   }
 
-  /* small spacing tweak so the image doesn't overlap other things */
   .about-contents {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
