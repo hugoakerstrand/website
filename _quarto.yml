@@ -52,7 +52,7 @@ format:
         - _files/fonts.scss 
     respect-user-color-scheme: true
     fontawesome: true
-    embed-resources: true
+    embed-resources: false  # Changed from true - CRITICAL for performance: prevents 23MB HTML file
     link-external-newwindow: true
     page-layout: full
     
