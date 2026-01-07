@@ -1,13 +1,73 @@
 /* https://quarto.org/docs/output-formats/html-themes.html#sass-variables */
 /* https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss */
 
+/* ===== PERFORMANCE FIXES ===== */
+/* Prevent forced reflows during page load */
+.navbar,
+.footer,
+.quarto-about-solana {
+  transition: none !important;
+}
+
+/* Add transitions back after page loads */
+.page-loaded .navbar,
+.page-loaded .footer {
+  transition: all 0.3s ease;
+}
+
+/* Optimize rendering with CSS containment */
+body {
+  contain: layout style;
+}
+
+.navbar {
+  contain: layout style;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.quarto-about-solana {
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+main .content, 
+main.content,
+article .content,
+article.content {
+  contain: layout;
+}
+
+.footer {
+  contain: layout style;
+}
+
+.about-image {
+  content-visibility: auto;
+}
+
+/* Font icons performance */
+.fa-brands,
+.fa-solid,
+.ai {
+  font-display: swap !important;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Navbar */
 .navbar {
   text-transform: uppercase;
   font-size: 1.25rem;
-}
-
-.quarto-color-scheme-toggle {
 }
 
 /* Body */
@@ -31,7 +91,7 @@ footer p,
 }
 
 .nav-fooger-left p {
-  text-align: "left";
+  text-align: left;
 }
 /* .main .content */
 main .content, 
