@@ -1,0 +1,25 @@
+---
+title: "A look at {Targets}" 
+description: "An introduction to the R package for pipeline development" 
+author: "Hugo Åkerstrand" 
+date: "2026-02-11" 
+categories:
+  - Automation
+  - Pipeline Development
+  - Reproducible Research
+---
+*Lifting data handling and analysis into pipelines is an important step towards
+reproducible, automated, and robust workflows. In this blog post, I outline
+how researchers can use the R package [targets] to set up such a pipeline.*
+
+We will also use my own R package flod to generate some synthetic flow cytometry data
+and the tidyverse suite for general data wrangling and plotting.
+
+```{r}
+library(flod)
+library(targets)
+library(tidyverse)
+```
+
+
+[targets]: https://docs.ropensci.org/targets/index.html
