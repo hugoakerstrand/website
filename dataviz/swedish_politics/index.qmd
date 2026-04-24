@@ -1,8 +1,6 @@
 ---
-# title: Swedish Politics
-# listing:
-  # contents: dataviz.yml
-  # type: grid
+title: Swedish Politics
+listing:
+  contents: dataviz.yml
+  type: grid
 ---
-
-*Under construction, check back soon!*
