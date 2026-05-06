@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Personal website for<br>[Hugo Åkerstrand](https://hugoakerstrand.com)
+# Personal website for [Hugo Åkerstrand](https://hugoakerstrand.com)
 
 My website was made using [Quarto](https://quarto.org/), an open-source
 technical and scientific publishing system. I have previously used
