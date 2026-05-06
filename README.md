@@ -3,17 +3,14 @@
 
 # Personal website for<br>[Hugo Åkerstrand](https://hugoakerstrand.com)
 
-<a href=https://hugoakerstrand.com><img src='https://raw.githubusercontent.com/hugoakerstrand/website/main/_files/website/img/website_dump.png' align="right" height="180" alt=''/></a>
-
-[![Netlify
-Status](https://api.netlify.com/api/v1/badges/9ea965a4-d4e7-4c4c-9bd4-44a7aa8650ec/deploy-status)](https://app.netlify.com/projects/hugoakerstrand/deploys)
-
 My website was made using [Quarto](https://quarto.org/), an open-source
 technical and scientific publishing system. I have previously used
 quarto for report generation and driver for automatic data analysis, but
 this is my first attempt at a website.
 
-As an inspiration, I’d like to extend a special thanks to:
+## Want to do your own?
+
+Have a look at the following resources that I used:
 
 - [Silvia Canelón](https://github.com/spcanelon/silvia), who has an open
   repository for people like me to repo dive.
