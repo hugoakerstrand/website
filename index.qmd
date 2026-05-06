@@ -1,7 +1,7 @@
 ---
 title: "Hugo Åkerstrand, PhD"
 subtitle: |
-    R Programming | Life Science Research | Data Visualization 
+    Data Science and Visualization | Agentic Workflows | Life Science Research
     <!-- <a href=https://www.linkedin.com/in/hugo-%C3%A5kerstrand-74696655/> {{< fa brands linkedin >}}</a> -->
     <!-- <a href=https://github.com/hugoakerstrand/> {{< fa brands github >}}</a> -->
     <!-- <a href=https://pubmed.ncbi.nlm.nih.gov/?term=%C3%85kerstrand+H&cauthor_id=35088351> {{< ai pubmed >}}</a> -->
@@ -34,7 +34,7 @@ about:
 twitter-card:
   title: Hugo Åkerstrand, PhD
   description: |
-    Life science research, R programming, & data visualization.
+    Data Science and Visualization, Agentic Workflows, Life Science Research.
   image: assets/website/img/profile.jpg
 
 page-layout: full
@@ -46,8 +46,7 @@ execute:
 ---
 
 ::: {#hero-heading}
-<!-- # Welcome! -->
-
+<!--
 ```{r, echo=TRUE, eval=TRUE}
 age_of_AI <- TRUE
 Hugo <- function(
@@ -62,6 +61,7 @@ Hugo <- function(
 }
 Hugo()
 ```
+-->
 
 <!-- I am Hugo, a life science researcher and R programmer. I hold a PhD -->
 <!-- in developmental immunology from Lund Stem Cell Center, Sweden. I combine a strong -->
